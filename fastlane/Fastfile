@@ -1,3 +1,3 @@
 lane :test do
-  qiye_wechat_bot(key: "633a31f6-7f9c-4bc4-97a0-0ec1eefa589", text:"Fastlane构建成功", at_all: true)
+  qiye_wechat_bot(key: "", text:"Fastlane构建成功", at_all: true)
 end

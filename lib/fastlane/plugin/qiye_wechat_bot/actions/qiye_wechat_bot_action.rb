@@ -5,8 +5,10 @@ module Fastlane
   module Actions
     class QiyeWechatBotAction < Action
       def self.run(params)
-        UI.message("企业微信Bot开始干活了!")
+        UI.message("企业微信Bot开始干活啦!")
         key = params[:key]
+        puts "Token:"
+        puts key 
         text = params[:text]
         at_all = params[:at_all] == nil ? "" : "@all"
         curl = %Q{
@@ -16,11 +18,11 @@ module Fastlane
               "msgtype": "text", 
               "text": {
                   "content": "#{text}",
-                  "mentioned_list": ["#{at_all}"],
+                  "mentioned_list": ["#{at_all}"]
                 }
               }'
           }
-          UI.message(url)
+          # UI.message(curl)
           system curl
       end
 
